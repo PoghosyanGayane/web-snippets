@@ -1,0 +1,21 @@
+/* Responsive layout using Grid or Flexbox
+   Consistent spacing and typography */
+
+body {
+    background-color: #eaccd9;
+}
+.card{
+    width: 150px;
+    height: 150px;
+    background-color: #d87ea5;
+    display: grid;
+    justify-content: space-evenly;  
+    align-content: center;   
+}
+.cards {
+    display: grid;
+    justify-content: space-evenly;  
+    align-content: space-evenly;   
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1em;
+}
