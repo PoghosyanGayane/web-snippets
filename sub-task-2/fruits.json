@@ -1,0 +1,24 @@
+{
+  "fruits": [
+    { "name": "apple", "color": "red" },
+    { "name": "banana", "color": "yellow" },
+    { "name": "orange", "color": "orange" },
+    { "name": "grape", "color": "purple" },
+    { "name": "lemon", "color": "yellow" },
+    { "name": "lime", "color": "green" },
+    { "name": "strawberry", "color": "red" },
+    { "name": "blueberry", "color": "blue" },
+    { "name": "watermelon", "color": "green" },
+    { "name": "pineapple", "color": "brown" },
+    { "name": "mango", "color": "orange" },
+    { "name": "peach", "color": "orange" },
+    { "name": "cherry", "color": "red" },
+    { "name": "kiwi", "color": "green" },
+    { "name": "pear", "color": "green" },
+    { "name": "plum", "color": "purple" },
+    { "name": "pomegranate", "color": "red" },
+    { "name": "papaya", "color": "orange" },
+    { "name": "coconut", "color": "brown" },
+    { "name": "apricot", "color": "orange" }
+  ]
+}
