@@ -4,15 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FORM</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
 </head>
 <body>
-    <h2>SUB-TASK 11</h2>
-    <form>
+    <h2>Form with Validation</h2>
+    <form class="container">
     <div> 
         <label for="name">Name:</label>
         <input id="name" type="text" required />
+    </div>
+    <div> 
+        <label for="surname">Surname:</label>
+        <input id="surname" type="text" required />
     </div>
     <div> 
         <label for="email">Email:</label>
@@ -26,7 +30,7 @@
         <label for="password">Password:</label>
         <input id="password" type="password" minlength="8" required />
     </div>
-    <div>
+    <div class="save-div">
         <button id="save-btn"> Save </button>
     </div>
     </form>
