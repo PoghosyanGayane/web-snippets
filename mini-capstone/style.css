@@ -1,0 +1,104 @@
+:root {
+    --body-bg: aliceblue;
+    --button-bg: #B0B0B0;
+    --button-bg-hover: #909090;
+    --button-bg-active: #787878;
+    --button-border: rgb(39, 37, 37);
+    --button-color: #ffffff;
+    --section-bg: rgb(167, 170, 172);
+    --title-color: aliceblue;
+    --li-bg: rgb(206, 211, 214);
+    --input-disabled-color: blue;
+}
+
+body {     
+    font-family: Arial, Helvetica, sans-serif; 
+}  
+
+main {
+    width: 95%;
+    max-width: 600px;
+}
+
+button {     
+    font-family: inherit;     
+    font-size: 0.9rem;     
+    margin: 0.2em;   
+    border: 2px solid var(--button-border);     
+    background-color: var(--button-bg);     
+    color: var(--button-color); 
+}  
+
+input {
+    font-family: inherit;     
+    font-size: 0.9rem;   
+}
+
+button:hover {     
+    background-color: var(--button-bg-hover); 
+}  
+
+button:active {     
+    background-color: var(--button-bg-active);  
+}  
+
+.container {     
+    width: max-content; 
+}  
+
+.component {     
+    margin: 0.2rem;     
+    display: flex;     
+    justify-content: space-between; 
+}  
+
+.add-btn {     
+    margin-right: 0.5em;     
+    justify-content: flex-end; 
+}   
+
+section {     
+    margin: 0.2rem;     
+    padding: 0.1em;     
+    background-color: var(--section-bg); 
+}  
+
+.title {     
+    color: var(--title-color);     
+    margin: 0.2em; 
+}  
+
+ul {     
+    list-style: none;     
+    padding: 0;     
+    margin: 0.2rem; 
+} 
+
+li {     
+    padding: 0.2em;     
+    margin: 0.2rem;     
+    background-color: var(--li-bg);  
+}  
+
+.bookmark-list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    gap: 1rem;
+}
+
+.bookmark-list-item div:first-child {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+
+.warning {
+    margin-left: 2em;
+    color:wheat;
+}
+
+.hidden {
+    display: none;
+}

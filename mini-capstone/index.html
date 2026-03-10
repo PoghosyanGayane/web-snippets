@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> bookmarks </title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="main.js"></script>
+    <script type="module" src="storage.js"></script>
+    <script type="module" src="bookmarks.js"></script>
+    <script type="module" src="ui.js"></script>
+</head>
+<body>
+    <header>
+        <h2> Bookmark Manager </h2>
+    </header>
+    <main>
+        <section>  
+            <h3 class="title"> Add New Bookmark </h3>
+            <div class="container">
+                <div class="component">
+                    <label for="bookmark-title"> Title: </label>
+                    <input id="bookmark-title" type="text" />
+                </div>
+                <div class="component">
+                    <label for="bookmark-url"> URL: </label>
+                    <input id="bookmark-url" type="url" />
+                </div>
+            </div>
+            <div class="component add-btn">
+                <button id="add"> ADD </button>
+            </div>
+            <div>
+                <p class="warning">
+            <div>
+        </section>  
+
+        <section class="stored-bookmarks">
+            <h3 class="title"> Saved Bookmarks </h3>
+            <ul></ul>
+
+            <template id="bookmark-template">
+                <li class="bookmark-list-item">
+                    <div>
+                        <a class="bookmark-link"> </a>
+                        <input class="bookmark-title">
+                    </div>
+                    <div>
+                        <button class="edit">Edit</button>
+                        <button class="save">Save</button>
+                        <button class="remove">Remove</button>
+                    </div>
+                </li>
+            </template>
+
+        </section>
+    </main>
+    <footer>
+        <p>This is advanced form of task 4 sub-task 18.</p>
+    </footer>
+</body>
+</html>
