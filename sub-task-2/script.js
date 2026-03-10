@@ -1,27 +1,41 @@
 "use strict";
-// SUB-TASK 2
-// JavaScript to dynamically add cards
 
 let fruits = [];
 
-fetch("fruits.json")
-  .then(response => response.json())
-  .then(data => {
-    fruits = data.fruits;
-  });
+async function loadfruits(file) {
+    try{
+      const response = await fetch(file);
+      const data = await response.json();
+
+      fruits = data.fruits;
+    }
+    catch(err){
+        console.error(err);
+    }
+}
+
+loadfruits("fruits.json");
 
 const cards = [];
 const addBtn = document.querySelector("#add-card");
 const cardSection = document.querySelector(".cards");
 
-addBtn.addEventListener("click", () => {
-    console.log(fruits);
-    const newCard = document.createElement("div");
-    const newCardName = document.querySelector("#fruit-name").value;
+const warning = document.querySelector(".warning");
 
-    let index = fruits.findIndex((f) => f.name === newCardName);
+addBtn.addEventListener("click", () => {
+    warning.textContent = "";
+    
+    if (fruits.length === 0){
+        warning.textContent = "Internal error. Please try again.";
+        return;
+    }
+
+    const newCard = document.createElement("div");
+    const newCardName = document.querySelector("#fruit-name").value.trim();
+
+    let index = fruits.findIndex((f) => f.name === newCardName.toLowerCase());
     if (index === -1){
-        alert("no such fruit in our fruit list");
+        warning.textContent = "no such fruit in our fruit list";
         return;
     }
 
@@ -29,5 +43,6 @@ addBtn.addEventListener("click", () => {
     newCard.textContent = newCardName;
     newCard.style.backgroundColor = fruits[index].color;
     cardSection.appendChild(newCard);
+    
     cards.push(newCard);
 })
