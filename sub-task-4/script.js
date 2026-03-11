@@ -9,29 +9,40 @@ async function getWeather(lat, lon) {
         return data["current_weather"]["temperature"];
     }
     catch(err) {
-        console.log(err);
+        console.error(err);
         return;
     }
 }
 
 async function getCitiesWithTemp() {
-    const res = await fetch("city-locations.json");
-    const data = await res.json();
-    
-    const cities = data.cities;
+    try {
+        const res = await fetch("city-locations.json");
+        const data = await res.json();
+        
+        const cities = data.cities;
 
-    const promises = cities.map(async (city) => {
-        city.temperature = await getWeather(city.latitude, city.longitude);
-        return city;
-    });
+        const promises = cities.map(async (city) => {
+            city.temperature = await getWeather(city.latitude, city.longitude);
+            return city;
+        });
 
-    await Promise.all(promises);
+        await Promise.all(promises);
 
-    return cities;
+        return cities;
+    }
+    catch(err) {
+        console.error(err);
+    }
 }
 
 async function displayCities(){
-    const cities = await getCitiesWithTemp();
+    let cities;
+    try {
+        cities = await getCitiesWithTemp();
+    } catch(err) {
+        console.error(err);
+        return;
+    }
     const cityList = document.querySelector("ul");
     const template = document.querySelector("#city-template");
 
@@ -40,7 +51,7 @@ async function displayCities(){
         const clonedCity = template.content.cloneNode(true);
 
         clonedCity.querySelector(".city-name").textContent = city.name;
-        clonedCity.querySelector(".city-temp").textContent = city.temperature + "C";
+        clonedCity.querySelector(".city-temp").textContent = city.temperature + "°C";
         
         docFragList.appendChild(clonedCity);
     }
